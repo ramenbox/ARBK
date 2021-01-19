@@ -25,7 +25,7 @@ links:
 pnkt:
  lsl r17
  out PORTD, r17
- rcall Delay //Delay Funktion wird über RCALL aufgerufen
+ rcall Delay //Delay Funktion wird Ã¼ber RCALL aufgerufen
  dec r21
  brne pnkt
  rjmp rechts
@@ -35,14 +35,14 @@ rechts:
 pnkt1:
  lsr r17
  out PORTD, r17
- rcall Delay //Delay Funktion wird über RCALL aufgerufen
+ rcall Delay //Delay Funktion wird Ã¼ber RCALL aufgerufen
  dec r22
  brne pnkt1
  rjmp links
 
 
 // Delay 3 200 000 cycles
-// Funktion für : 200ms at 16.0 MHz
+// Funktion fÃ¼r : 200ms at 16.0 MHz
 delay:
     ldi  r18, 17
     ldi  r19, 60
@@ -54,3 +54,7 @@ L1: dec  r20
     dec  r18
     brne L1
 ret
+
+/*
+Die Delay-Funktion habe ich von der Seite " http://darcy.rsgc.on.ca/ACES/TEI4M/AVRdelay.html " < Link allerdings etwas Fischy, also achtet drauf.
+*/
